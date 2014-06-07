@@ -1,0 +1,22 @@
+{
+  "name": "cloudwrangle",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MCProHosting/cloudwrangle",
+  "authors": [
+    "Connor Peet <connor@connorpeet.com>"
+  ],
+  "main": "Gruntfile.js",
+  "license": "CC-BY-ND-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "lodash": "~2.4.1",
+    "angular-animate": "~1.2.16"
+  }
+}

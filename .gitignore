@@ -1,0 +1,7 @@
+/bower_components
+/node_modules
+/dist
+/.idea
+/.tmp
+/npm-debug.log
+/src/config/config.json

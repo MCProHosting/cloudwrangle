@@ -1,0 +1,12 @@
+{
+    "cloudflare": {
+        "token": "SomeSecretThing",
+        "email": "you@yourdomain.com"
+    },
+    "server": {
+        "host": "127.0.0.1",
+        "port": 3000
+    },
+    "file_db": true,
+    "page_length": 100
+}
