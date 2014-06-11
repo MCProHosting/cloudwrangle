@@ -15,27 +15,29 @@ db = null
 
 initalize =  ->
     if not initialized
-        async.series [(cb) ->
-            db.run '''
-                CREATE TABLE `domains` (
-                    `name` varchar(20),
-                    `status` varchar(10),
-                    `stats` text,
-                    PRIMARY KEY (`name`)
-                );
-            ''', cb
-        , (cb) ->
-            db.run '''
+        async.series [
+            (cb) ->
+                db.run '''
+                    CREATE TABLE `domains` (
+                        `name` varchar(20),
+                        `status` varchar(10),
+                        `stats` text,
+                        PRIMARY KEY (`name`)
+                    );
+                ''', cb
+            (cb) ->
+                db.run '''
                     CREATE TABLE `records` (
                         `id` int(11),
                         `domain` varchar(20),
                         `name` varchar(100),
                         `content` varchar(100),
+                        `type` varchar(10),
                         `data` text,
                         PRIMARY KEY (`id`)
                     );
                 ''', cb
-        ], -> db.ready()
+        ], db.ready
     else
         db.ready()
 

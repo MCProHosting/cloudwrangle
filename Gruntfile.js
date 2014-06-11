@@ -24,8 +24,14 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: source_directory,
-                        src: ['**/*.{html,json,js}'],
+                        src: ['**/*.{html,json,js,png}'],
                         dest: target_directory
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/fontawesome/fonts',
+                        src: ['**'],
+                        dest: target_directory + '/public/fonts'
                     },
                     {
                         src: ['bower_components/angular/angular.min.js'],
@@ -45,7 +51,7 @@ module.exports = function (grunt) {
         sass: {
             dev: {
                 files: {
-                    'dist/css/style.css': source_directory + '/css/style.scss'
+                    'dist/public/css/style.css': source_directory + '/public/css/style.scss'
                 }
             }
         },

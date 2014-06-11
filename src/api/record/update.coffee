@@ -12,6 +12,6 @@ module.exports = (req, res) ->
 
         res.send 200
 
-        ops.insert rec.obj, (err) ->
+        ops.insert rec.rec.obj, (err) ->
             if err
                 log.error 'DB: Error on record edit: ' + err

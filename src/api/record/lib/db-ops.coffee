@@ -2,10 +2,10 @@ database   = require('../../../lib/database')
 log        = require('../../../lib/log')
 
 insert = database.prepare '''
-    insert into `records`
-    (`id`, `domain`, `name`, `content`, `data`)
+    insert or ignore into `records`
+    (`id`, `domain`, `name`, `content`, `type`, `data`)
     values
-    ($id, $domain, $name, $content, $data)
+    ($id, $domain, $name, $content, $type, $data)
 '''
 
 
@@ -15,6 +15,7 @@ module.exports =
             $id:      record.rec_id
             $domain:  record.zone_name
             $name:    record.name
+            $type:    record.type
             $content: record.content
             $data:    JSON.stringify(record)
         }, callback

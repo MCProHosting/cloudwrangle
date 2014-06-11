@@ -1,4 +1,5 @@
 express = require('express')
+log     = require('./log')
 app = express()
 
 app.use require('body-parser')()
@@ -6,6 +7,7 @@ app.use express.static(__dirname + '/public')
 
 app.engine '.html', require('ejs').renderFile
 app.set 'views', __dirname + '/../views'
+app.use express.static(__dirname + '/../public')
 
 app.get '/', (req, res) -> res.render('index.html')
 

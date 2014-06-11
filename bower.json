@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "angular": "~1.2.16",
-    "lodash": "~2.4.1",
-    "angular-animate": "~1.2.16"
+    "angular-animate": "~1.2.16",
+    "bootstrap-sass-twbs": "~3.1.1+2",
+    "fontawesome": "~4.1.0"
   }
 }
