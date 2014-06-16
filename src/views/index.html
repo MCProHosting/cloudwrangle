@@ -30,7 +30,7 @@
 
         <div class="container">
             <div class="alert alert-{{ message[0] }}" ng-if="message">{{ message[1] }}</div>
-            <div class="alert alert-warning" ng-if="data && !data.domain.loaded">Domain records are still loading from CloudFlare. There may yet be some missing records.</div>
+            <div class="alert alert-warning" ng-if="data && data.domain.status == 'loading'">Domain records are still loading from CloudFlare. There may yet be some missing records.</div>
         </div>
 
         <div class="records container" ng-if="domain.chosen">

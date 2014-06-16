@@ -99,11 +99,10 @@ app.controller 'WrangleController', [
                 params: data
             ).success( (results) ->
                 $scope.data = results
+                $scope.record.loading = false
 
                 if results.domain.status is 'loading'
                     setTimeout $scope.refreshPage, 1000
-                else
-                    $scope.record.loading = false
             ).error( ->
                 $scope.message = ['danger', 'There was an error! Check your command line - its likely your CloudFlare keys are invalid.']
             )
